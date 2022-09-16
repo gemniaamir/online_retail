@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:fillViewport="true"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/logout"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Profile"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/title"
+                android:id="@+id/topView"
+                android:layout_margin="10dp"
+                android:background="@drawable/surface_box"
+                android:layout_height="200dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profile_image"
+                        android:layout_width="96dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="96dp"
+                        android:src="@drawable/ic_user"
+                        app:civ_border_width="3dp"
+                        app:civ_border_color="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:textColor="@color/black"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="22sp"
+                        android:id="@+id/username"
+                        android:text="USER NOT SIGNED IN"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:id="@+id/email"
+                        android:text="-"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_below="@+id/topView"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/myOrders"
+                    android:paddingTop="10dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:drawableStart="@drawable/ic_order_primary"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:layout_marginEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:textAlignment="textStart"
+                    android:background="@color/transparent"
+                    android:textColor="@color/primaryColor"
+                    android:text="My Orders"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="#ECEAEA"
+                    android:layout_height="1dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/myFavorites"
+                    android:paddingTop="10dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:layout_marginEnd="15dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_favourite"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/primaryColor"
+                    android:background="@color/transparent"
+                    android:text="My Favorites"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="#ECEAEA"
+                    android:layout_height="1dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/myInfo"
+                    android:paddingTop="10dp"
+                    android:backgroundTint="@color/primaryColor"
+                    android:paddingBottom="10dp"
+                    android:textAlignment="textStart"
+                    android:paddingStart="13dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_person_primary"
+                    android:layout_marginEnd="15dp"
+                    android:textColor="@color/primaryColor"
+                    android:text="Personal Info"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:background="@color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:background="#ECEAEA"
+                    android:layout_height="1dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/myAddresses"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:drawablePadding="10dp"
+                    android:drawableStart="@drawable/ic_home"
+                    android:layout_marginEnd="15dp"
+                    android:textAlignment="textStart"
+                    android:backgroundTint="@color/primaryColor"
+                    android:textColor="@color/primaryColor"
+                    android:background="@color/transparent"
+                    android:text="My Addresses"
+                    android:drawableEnd="@drawable/ic_forward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/surface_box"
+        android:drawableEnd="@drawable/ic_logout"
+        android:drawableTint="@color/primaryColor"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingStart="13dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="Logout!"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66FFFFFF"
+        android:visibility="gone"
+        android:id="@+id/loadingView"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            android:layout_centerInParent="true"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

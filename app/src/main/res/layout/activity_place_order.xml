@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlaceOrder">
+
+    <com.codecanyon.onlinestore.CustomScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/bottomView"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/topView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/ic_arrow_back_black_24dp" />
+
+                <TextView
+                    android:id="@+id/cartTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="12dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="center_vertical"
+                    android:text="Review &amp; Place Order"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/summaryTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/topView"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:text="Order Summary"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/summaryTitle"
+                android:layout_margin="10dp"
+                android:id="@+id/recycleViewParent"
+                android:background="@drawable/surface_box">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/cartRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:scrollbars="none" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:id="@+id/billDetailView"
+                android:layout_below="@+id/recycleViewParent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="30dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:text="Total Gross Amount:"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:id="@+id/totalGrossAmount"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:text="Total Discount Amount:"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:id="@+id/totalDiscountAmount"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:weightSum="2"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:text="Delivery Charges: "
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:textColor="@color/black"
+                        android:id="@+id/deliveryCharges"
+                        android:textAlignment="textEnd"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:text="0 Rs."
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/paymentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/billDetailView"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:text="Payment Method"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@+id/paymentTitle"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/paymentRadioGroup"
+                android:layout_marginStart="10dp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:id="@+id/groceryCardButton"
+                    android:layout_gravity="start"
+                    android:layout_width="wrap_content"
+                    android:text="Grocery Card"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatRadioButton
+                    android:layout_marginStart="20dp"
+                    android:id="@+id/codButton"
+                    android:text="COD"
+                    android:layout_gravity="end"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/addressTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/paymentRadioGroup"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center_vertical"
+                android:text="Delivery Address"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_below="@+id/addressTitle"
+                android:background="@drawable/surface_box"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/deliverySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </com.codecanyon.onlinestore.CustomScrollView>
+
+    <RelativeLayout
+        android:id="@+id/bottomView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="12dp">
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="15dp"
+            android:background="#ffefef" />
+
+        <TextView
+            android:id="@+id/totalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/totalAmount"
+            android:fontFamily="@font/montserrat_bold"
+            android:text="Total"
+            android:textAllCaps="true"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/totalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/montserrat_medium"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <com.ornach.nobobutton.NoboButton
+            android:id="@+id/placeOrder"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/totalTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp"
+            app:nb_backgroundColor="@color/primaryColor"
+            app:nb_borderColor="@color/surfaceColor"
+            app:nb_borderWidth="2dp"
+            app:nb_drawableResource="@drawable/ic_shopping_cart_surface"
+            app:nb_focusColor="@color/surfaceColor"
+            app:nb_iconPadding="20dp"
+            app:nb_radius="10dp"
+            app:nb_text="   PLACE ORDER   "
+            app:nb_textColor="#FFFFFF" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66FFFFFF"
+        android:visibility="gone"
+        android:id="@+id/loadingView"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            android:layout_centerInParent="true"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

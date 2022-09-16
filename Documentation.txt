@@ -1,0 +1,145 @@
+INTRODUCTION
+
+
+This Android app is designed to provide an example of a beautiful, smart and clean design UI, UX. Application design is very simple and beautiful. It's very easy to apply changes.  
+
+This is developed using 'Android  Studio' IDE. Android studio is perfect for designing Android Applications. 
+
+JAVA is used as main programming language. 
+
+'Firebase' which is progressing by leaps and bounds and being widely used by developers. It's used to provide backend of application. 
+
+We are using following firebase services technologies in this app.
+
+Firebase Authentication
+
+Firebase FireStore
+
+Firebase Storage
+
+Firebase Analytics
+
+'Google Maps' are also being used by this application.
+
+.
+.
+.
+.
+.
+.
+.
+
+DOCUMENTATION
+
+Admin User at Mobile Application:
+
+Username: Admin
+
+Password: 123456
+
+Testing User: 
+
+Username: test123@gmail.com
+
+Password: 123456
+.
+.
+.
+.
+.
+.
+.
+FIREBASE SERVICES
+Create a firebase account using your email id. Add firebase plugin inside your Android Studio. Create a project at firebase dashboard. To connect your application select Firebase from Tools menu inside Android Studio. In Assistant side menu connect your application with firebase. 
+.
+.
+.
+.
+.
+.
+.
+Firebase Firestore
+
+
+Firebase Firestore is being used to provide back end. This free us from using Rest API or third party API for data storing and retrieval. We can save data in form of Collection & Documents. It's very fast and easy to use.
+
+Instructions are as follows....
+
+Create Project and add your application
+
+Enable FireStore  from all products. 
+
+Add to your project from Firebase Assistant from Android Studio.
+
+Change rules and set it to 'true'. So, we can do write/read operations.
+
+And that's it you are done with Firebase FireStore part. Everything else is being handled at mobile application end.
+.
+.
+.
+.
+.
+.
+.
+Firebase Storage
+
+
+Firebase Storage is a online database provided by firebase. We can store images, files in it. We can read from our application and upload from our application. 
+
+Instruction are as follows.....
+
+Enable Storage from all products
+
+Add to your project from Firebase Assistant from Android Studio.
+
+Change rules and set it to 'true'. So, we can do write/read operations.
+
+Copy uploaded image link and use it wherever you want. e.g. you can upload image from mobile admin panel. Then you can use it's link inside Product Object for downloading image from our application. 
+.
+.
+.
+.
+.
+.
+.
+Firebase Authentication
+
+
+Firebase authentication can be used for managing different type of sign in and register a user operations on any platform. 
+
+Instruction are as follows.....
+
+Enable Authentication from all products
+
+Add to your project from Firebase Assistant from Android Studio.
+
+Change rules and set it to 'true'. So, we can do write/read operations.
+
+Everything else is being handled at mobile application end. 
+.
+.
+.
+.
+.
+.
+.
+GOOGLE MAPS
+Create a project at Google API Console. Enable Google maps SDK for Android from libraries. Replace google maps api key with being used in application. 
+.
+.
+.
+.
+.
+.
+.
+MOBILE ADMIN PANEL
+You can use mobile admin panel for uploading images of products, categories and companies. 
+
+In same application you can enter admin panel by above mentioned credentials for admin at login page. 
+
+You can add products, categories and images. 
+
+Newly added products and categories are set with a default images. You can upload your images to Firebase Storage. And replace Image URL with your ones for products and categories.
+
+
+

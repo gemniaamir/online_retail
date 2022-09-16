@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.codecanyon.onlinestore">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_cart_icon_round"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_cart_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.OnlineRetailApplication"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name="com.codecanyon.onlinestore.IntroActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.Splash"
+            android:exported="true"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.codecanyon.onlinestore.OrderHistory"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.MapActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.AddAddress"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.AddressList"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.FavouriteView"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.ChangePassword"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.ProfileDetail"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.PlaceOrder"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.CartList"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.ProductDetail"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name=".admin.AddProduct"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name=".admin.AddCategory"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.AdminPage"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.MoreCategory"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.ProductResults"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.Home"
+            android:exported="false"
+            android:label="@string/title_activity_home"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.codecanyon.onlinestore.RegistrationPage"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.LoginPage"
+            android:exported="false"
+            android:theme="@style/Theme.OnlineRetailApplication.NoActionBar" />
+        <activity
+            android:name="com.codecanyon.onlinestore.FirestoreExample"
+            android:exported="false" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+    </application>
+
+</manifest>

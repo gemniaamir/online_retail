@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fillViewport="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminPage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="14dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:padding="8dp"
+                android:layout_centerVertical="true"
+                android:id="@+id/back"
+                android:background="@drawable/ic_back_arrow"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/adminHomeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="center"
+                android:text="Mobile Admin Panel"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_dark"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:text="add a product"
+                android:id="@+id/addProduct"
+                android:backgroundTint="@color/primaryColor"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:text="add a category"
+                android:id="@+id/addCategory"
+                android:backgroundTint="@color/primaryColor"
+                android:layout_height="wrap_content"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:text="Image to Firebase Storage"
+                android:id="@+id/addImage"
+                android:backgroundTint="@color/primaryColor"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:autoLink="web"
+                android:layout_margin="10dp"
+                android:textColor="@color/red"
+                android:text="Tip: Before uploading remove background of image from website: https://www.remove.bg/"
+                android:fontFamily="@font/average_sans"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/pd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            app:indicatorColor="@color/red"
+            app:trackColor="@color/primaryColor" />
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/parentView"
+    tools:context=".AddAddress">
+
+    <RelativeLayout
+        android:id="@+id/topView"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/cartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text="Add Address"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/topView"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#ffefef" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@+id/topView"
+        android:fillViewport="true"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="15dp"
+            android:padding="15dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="General Info"
+                android:layout_marginBottom="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_height="wrap_content"/>
+
+            <com.omarshehe.forminputkotlin.FormInputSpinner
+                android:id="@+id/addressType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:form_array="@array/array_address_type"
+                app:form_hint="Select Address Type"
+                app:form_label="Address Type"
+                app:form_showLabel="true"
+                android:layout_marginTop="10dp"
+                app:form_textColor="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+
+                <com.omarshehe.forminputkotlin.FormInputText
+                    android:id="@+id/street"
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="16dp"
+                    app:form_inputType="text"
+                    app:form_label="Street" />
+
+                <com.omarshehe.forminputkotlin.FormInputText
+                    android:id="@+id/houseNo"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:form_inputType="text"
+                    app:form_label="House" />
+
+            </LinearLayout>
+
+            <com.omarshehe.forminputkotlin.FormInputText
+                android:id="@+id/areaName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:form_inputType="text"
+                app:form_label="Area Name" />
+
+            <com.omarshehe.forminputkotlin.FormInputText
+                android:id="@+id/nearby"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:form_inputType="text"
+                app:form_label="Nearby" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/locationTitle"
+                android:text="Map Location"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:id="@+id/latlngView"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/latitudeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Latitude"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="*"
+                            android:layout_toEndOf="@+id/latitudeTitle"
+                            android:textColor="@color/red"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/latitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:paddingStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_bg"
+                        android:layout_marginEnd="10dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="Longitude"
+                            android:textColor="@color/black"
+                            android:id="@+id/longitudeTitle"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:text="*"
+                            android:layout_toEndOf="@+id/longitudeTitle"
+                            android:textColor="@color/red"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/longitude"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:paddingStart="5dp"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:background="@drawable/edit_bg"
+                        android:layout_marginEnd="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Google Location"
+                    android:textColor="@color/black"
+                    android:id="@+id/gLocationTitle"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="*"
+                    android:layout_toEndOf="@+id/gLocationTitle"
+                    android:textColor="@color/red"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:id="@+id/gLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/gotoMap"
+                    android:background="@drawable/edit_bg"
+                    android:gravity="center_vertical"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/gotoMap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_alignParentEnd="true"
+                    android:backgroundTint="@color/primaryColor"
+                    android:drawableStart="@drawable/ic_map"
+                    android:drawablePadding="10dp"
+                    android:paddingStart="10dp"
+                    android:text="Map    "
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/addAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                app:nb_backgroundColor="@color/primaryColor"
+                app:nb_borderColor="@color/white"
+                app:nb_borderWidth="2dp"
+                app:nb_drawableResource="@drawable/ic_plus"
+                app:nb_focusColor="@color/red"
+                app:nb_iconPadding="20dp"
+                app:nb_radius="10dp"
+                app:nb_text="   Add Address   "
+                app:nb_textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66FFFFFF"
+        android:visibility="gone"
+        android:id="@+id/loadingView"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            android:layout_centerInParent="true"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

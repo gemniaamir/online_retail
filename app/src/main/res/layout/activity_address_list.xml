@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".AddressList">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:id="@+id/noAddressView"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/noAddress"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:alpha="0.6"
+            android:background="@drawable/map" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/noAddress"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:text="No saved address. Please add some below +"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/cartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@+id/backButton"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text="Your Addresses"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemFound"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:gravity="center_vertical"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/topView"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#ffefef" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/addressRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/line1"
+        android:scrollbars="none" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_margin="16dp"
+        android:id="@+id/addAddress"
+        android:src="@drawable/ic_plus"
+        android:tint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66FFFFFF"
+        android:visibility="gone"
+        android:id="@+id/loadingView"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            android:layout_centerInParent="true"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/satellite" android:title="Sattelite" android:icon="@drawable/ic_satelliter"/>
+    <item android:id="@+id/hybrid" android:title="Hybrid" android:icon="@drawable/ic_hybrid"/>
+    <item android:id="@+id/terrain" android:title="Terrain" android:icon="@drawable/ic_area"/>
+    <item android:id="@+id/standard" android:title="Standard" android:icon="@drawable/ic_standard"/>
+</menu>

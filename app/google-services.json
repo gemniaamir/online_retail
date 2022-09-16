@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164396568551",
+    "project_id": "onlinestorecodecanyon",
+    "storage_bucket": "onlinestorecodecanyon.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164396568551:android:8c9b52209fac3b279a3742",
+        "android_client_info": {
+          "package_name": "com.codecanyon.onlinestore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164396568551-pv5gj04ti36sau7q6gq8dppr2chn6btq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuYC5NKPVK_ZVZgMxX5dAGTepxg3SJ4HQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164396568551-pv5gj04ti36sau7q6gq8dppr2chn6btq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductDetail">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/titleView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
+
+            <ImageButton
+                android:id="@+id/gotoBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_arrow_back_black_24dp" />
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Product Detail"
+                android:textColor="@android:color/background_dark"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:id="@+id/cartView"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/cart"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="10dp"
+                    app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
+                    app:tint="@color/primaryColor" />
+
+                <TextView
+                    android:layout_width="20dp"
+                    android:id="@+id/cartCount"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/circle_cart"
+                    android:layout_alignEnd="@+id/cart"
+                    android:text="0"
+                    android:gravity="center"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textColor="@color/white"
+                    android:layout_alignBottom="@+id/cart"
+                    android:layout_height="20dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/productIcon"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/titleView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/surface_box"
+            android:padding="10dp"
+            android:src="@drawable/oil" />
+
+
+        <com.like.LikeButton
+            app:icon_type="heart"
+            app:icon_size="30dp"
+            app:like_drawable="@drawable/ic_heart_red"
+            app:unlike_drawable="@drawable/ic_heart_white"
+            android:layout_alignBottom="@+id/productIcon"
+            android:id="@+id/favourite"
+            android:layout_width="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_height="30dp"/>
+
+        <RelativeLayout
+            android:id="@+id/priceView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/productIcon"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp">
+
+            <ImageView
+                android:id="@+id/companyIcon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="20dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/unilever" />
+
+            <TextView
+                android:id="@+id/productTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/companyIcon"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/primaryColor"
+                android:textSize="18sp" />
+
+
+            <TextView
+                android:id="@+id/productPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/productTitle"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/companyIcon"
+                android:fontFamily="@font/montserrat_medium"
+                android:gravity="bottom"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/productPrice"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:padding="3dp"
+                android:textColor="@color/red"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/productPrice"
+                android:layout_marginTop="10dp"
+                android:background="@color/surfaceColor" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/priceView"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Detail:"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/productDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Company Name:"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/companyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/montserrat_regular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Category:"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/productCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="Weight:"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/productWeight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:fontFamily="@font/montserrat_regular"/>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toLeftOf="@+id/quantitySelectionView"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="Quantity: "
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/quantitySelectionView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/lessQuantity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_minus"/>
+
+                    <TextView
+                        android:id="@+id/quantity"
+                        android:layout_width="50dp"
+                        android:layout_height="40dp"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="@color/black"/>
+
+                    <ImageButton
+                        android:id="@+id/addQuantity"
+                        android:layout_width="wrap_content"
+                        app:tint="@color/black"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_plus"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/totalAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+            <com.ornach.nobobutton.NoboButton
+                android:id="@+id/addToCart"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="10dp"
+                app:nb_backgroundColor="@color/primaryColor"
+                app:nb_borderColor="@color/surfaceColor"
+                app:nb_borderWidth="2dp"
+                app:nb_drawableResource="@drawable/ic_baseline_add_shopping_cart_24"
+                app:nb_focusColor="@color/surfaceColor"
+                app:nb_iconPadding="20dp"
+                app:nb_radius="10dp"
+                app:nb_text="   Add to shopping cart   "
+                app:nb_textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="You may like to add "
+                android:textColor="@android:color/background_dark"
+                android:textSize="16sp"
+                android:visibility="invisible"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentRecycler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="#66FFFFFF"
+        android:visibility="gone"
+        android:id="@+id/loadingView"
+        android:layout_height="match_parent">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/spin_kit"
+            android:layout_centerInParent="true"
+            style="@style/SpinKitView.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:SpinKit_Color="@color/black" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

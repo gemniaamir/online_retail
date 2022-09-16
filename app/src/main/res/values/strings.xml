@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Online Store</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="image_url">Notifications</string>
+    <string name="web_client_id">1006703380138-u01vfq9f84gcbmhfsch05anh6kco598h.apps.googleusercontent.com</string>
+    <string name="title_activity_place_order">PlaceOrder</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_signing">Signing</string>
+    <string name="tab_text_1">Sign In</string>
+    <string name="tab_text_2">Registration</string>
+
+</resources>

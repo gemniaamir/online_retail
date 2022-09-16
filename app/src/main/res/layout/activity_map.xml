@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+    <RelativeLayout
+        android:id="@+id/topView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/gotoBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_arrow_back_black_24dp" />
+
+        <TextView
+            android:id="@+id/cartTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="center_vertical"
+            android:text="Pick your location"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/changeMapType"
+            android:src="@drawable/ic_satelliter"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/topView"
+        android:layout_height="match_parent">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/home"
+            android:layout_height="35dp"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/latLngView"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:background="@drawable/surface_box_primary"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/latitudeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Latitude"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="*"
+                        android:layout_toEndOf="@+id/latitudeTitle"
+                        android:textColor="@color/red"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/latitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/edit_bg"
+                    android:layout_marginEnd="10dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="Longitude"
+                        android:textColor="@color/black"
+                        android:id="@+id/longitudeTitle"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="*"
+                        android:layout_toEndOf="@+id/longitudeTitle"
+                        android:textColor="@color/red"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/longitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/edit_bg"
+                    android:layout_marginEnd="10dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="Google Location"
+                    android:textColor="@color/black"
+                    android:id="@+id/locationTitle"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="*"
+                    android:layout_toEndOf="@+id/locationTitle"
+                    android:textColor="@color/red"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:paddingStart="5dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_bg"
+                android:layout_marginEnd="10dp"/>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gotoAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/primaryColor"
+            android:drawableStart="@drawable/ic_map"
+            android:drawablePadding="10dp"
+            android:layout_marginTop="15dp"
+            android:paddingStart="10dp"
+            android:text="Go back to address"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</RelativeLayout>

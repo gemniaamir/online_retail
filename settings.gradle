@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+        /**
+         * This is where we add jitpack libraries...in settings.gradle file
+         */
+        maven { url "https://jitpack.io" }
+    }
+}
+rootProject.name = "Online Retail Application"
+include ':app'
